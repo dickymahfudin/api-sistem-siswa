@@ -1,7 +1,7 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "description": "API sistem Mahasiswa",
+  "description": "API sistem Siswa",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
