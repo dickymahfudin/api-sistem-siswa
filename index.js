@@ -6,6 +6,7 @@ const userRouter = require("./src/routes/user");
 const absenRouter = require("./src/routes/absen");
 const pembayaranRouter = require("./src/routes/pembayaran");
 const pelajaranRouter = require("./src/routes/pelajaran");
+const nilaiRouter = require("./src/routes/nilai");
 const middleware = require("./src/helpers/middlewareToken");
 dotenv.config();
 
@@ -19,6 +20,7 @@ app.use("/api/user", userRouter);
 app.use("/api/absen", absenRouter);
 app.use("/api/pembayaran", middleware, pembayaranRouter);
 app.use("/api/pelajaran", middleware, pelajaranRouter);
+app.use("/api/nilai", middleware, nilaiRouter);
 
 app.get("*", middleware, (req, res) =>
   res.status(200).json({ status: "error", message: "Page Not Found" })
