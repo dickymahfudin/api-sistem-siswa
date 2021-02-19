@@ -2,7 +2,6 @@ const { pelajaran } = require("../../models");
 
 module.exports = async (req, res) => {
   const { nama } = req.body;
-  console.log(nama);
 
   try {
     const create = await pelajaran.create({ nama });
