@@ -8,13 +8,25 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      name: {
+      nama: {
         type: Sequelize.STRING,
       },
       nis: {
         type: Sequelize.INTEGER,
       },
       password: {
+        type: Sequelize.STRING,
+      },
+      ttl: {
+        type: Sequelize.STRING,
+      },
+      kelas: {
+        type: Sequelize.STRING,
+      },
+      status: {
+        type: Sequelize.BOOLEAN,
+      },
+      uid: {
         type: Sequelize.STRING,
       },
       role: {
