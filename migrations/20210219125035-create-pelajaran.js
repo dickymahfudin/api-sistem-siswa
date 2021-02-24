@@ -21,7 +21,41 @@ module.exports = {
         type: Sequelize.DATE,
       },
     });
+
+    await queryInterface.bulkInsert("pelajarans", [
+      {
+        nama: "Bahasa Indonesia",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        nama: "PKN",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        nama: "Bahasa Inggris",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        nama: "Matematika",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        nama: "IPA",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        nama: "IPS",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+    ]);
   },
+
   down: async (queryInterface, Sequelize) => {
     await queryInterface.dropTable("pelajarans");
   },

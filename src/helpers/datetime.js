@@ -10,7 +10,6 @@ const compareDay = (time) => {
 };
 
 const compareMonth = (time) => {
-  console.log(time);
   const before = new Date(time).getFullYear() + new Date(time).getMonth();
   const now = new Date().getFullYear() + new Date().getMonth();
 

@@ -1,4 +1,4 @@
-const { nilaiModel } = require("../../models");
+const { nilaiModel, user, pelajaran } = require("../../models");
 
 module.exports = async (req, res) => {
   const { user_id, pelajaran_id, nilai } = req.query;
@@ -7,7 +7,19 @@ module.exports = async (req, res) => {
   const tempNilai = !nilai ? {} : { nilai };
   const where = { ...tempUser_id, ...tempPelajaran_id, ...tempNilai };
 
-  const findNilai = await nilaiModel.findAll({ where });
+  const findNilai = await nilaiModel.findAll({
+    where,
+    include: [
+      { model: pelajaran, as: "pelajaran" },
+      {
+        model: user,
+        as: "user",
+        attributes: {
+          exclude: ["password"],
+        },
+      },
+    ],
+  });
   return res.status(200).json({
     status: "success",
     data: findNilai,

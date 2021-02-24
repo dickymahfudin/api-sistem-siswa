@@ -19,7 +19,7 @@ module.exports = {
     dialectOptions: {
       ssl: {
         require: true,
-        rejectUnauthorized: false, // <<<<<<< YOU NEED THIS
+        rejectUnauthorized: false,
       },
     },
   },
