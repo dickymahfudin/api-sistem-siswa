@@ -18,6 +18,12 @@ module.exports = {
         onUpdate: "cascade",
         onDelete: "cascade",
       },
+      keterangan: {
+        type: Sequelize.STRING,
+      },
+      nominal: {
+        type: Sequelize.INTEGER,
+      },
       status: {
         allowNull: false,
         type: Sequelize.BOOLEAN,

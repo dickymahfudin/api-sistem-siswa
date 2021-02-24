@@ -2,7 +2,7 @@ const { pembayaran, user } = require("../../models");
 const { compareMonth } = require("../../helpers/datetime");
 
 module.exports = async (req, res) => {
-  const { user_id } = req.body;
+  const { user_id, keterangan, nominal } = req.body;
   const findUser = await user.findByPk(user_id);
 
   if (!findUser) {
@@ -13,7 +13,13 @@ module.exports = async (req, res) => {
   }
 
   const createPembayaran = async () => {
-    const create = await pembayaran.create({ user_id, status: true });
+    const create = await pembayaran.create({
+      user_id,
+      keterangan,
+      nominal,
+      status: true,
+    });
+
     return res.status(201).json({
       status: "success",
       message: create,
@@ -21,7 +27,7 @@ module.exports = async (req, res) => {
   };
 
   const findPembayaran = await pembayaran.findOne({
-    where: { user_id },
+    where: [{ user_id, keterangan }],
     order: [["createdAt", "DESC"]],
   });
   if (findPembayaran) {
