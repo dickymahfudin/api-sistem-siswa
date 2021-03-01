@@ -22,12 +22,12 @@ module.exports = (sequelize, DataTypes) => {
     {
       user_id: DataTypes.INTEGER,
       pelajaran_id: DataTypes.INTEGER,
-      nilai: DataTypes.INTEGER,
+      nama: DataTypes.STRING,
+      value: DataTypes.INTEGER,
     },
     {
       sequelize,
-      modelName: "nilaiModel",
-      tableName: "nilais",
+      modelName: "nilai",
     }
   );
   return nilai;

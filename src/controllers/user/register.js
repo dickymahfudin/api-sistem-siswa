@@ -1,5 +1,5 @@
 const bcrypt = require("bcrypt");
-const { user, nilaiModel } = require("../../models");
+const { user } = require("../../models");
 const Validator = require("fastest-validator");
 const v = new Validator();
 
@@ -38,14 +38,6 @@ module.exports = async (req, res) => {
   const data = { password, nama, nis, ttl, kelas, status, role, uid };
 
   const createdUser = await user.create(data);
-  await nilaiModel.bulkCreate([
-    { user_id: createdUser.id, pelajaran_id: 1 },
-    { user_id: createdUser.id, pelajaran_id: 2 },
-    { user_id: createdUser.id, pelajaran_id: 3 },
-    { user_id: createdUser.id, pelajaran_id: 4 },
-    { user_id: createdUser.id, pelajaran_id: 5 },
-    { user_id: createdUser.id, pelajaran_id: 6 },
-  ]);
 
   return res.status(201).json({
     status: "success",

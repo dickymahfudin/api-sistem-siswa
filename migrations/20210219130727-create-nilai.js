@@ -28,7 +28,10 @@ module.exports = {
         onUpdate: "cascade",
         onDelete: "cascade",
       },
-      nilai: {
+      nama: {
+        type: Sequelize.STRING,
+      },
+      value: {
         type: Sequelize.INTEGER,
       },
       createdAt: {

@@ -1,14 +1,14 @@
-const { nilaiModel, user, pelajaran } = require("../../models");
+const { nilai, user, pelajaran } = require("../../models");
 const Validator = require("fastest-validator");
 const v = new Validator();
 
 module.exports = async (req, res) => {
-  const { user_id, pelajaran_id, nilai } = req.body;
+  const { user_id, pelajaran_id, value, nama } = req.body;
 
   const schema = {
     user_id: "number|empty:false",
     pelajaran_id: "number|empty:false",
-    nilai: "number|empty:false",
+    value: "number|empty:false",
   };
 
   const validate = v.validate(req.body, schema);
@@ -21,7 +21,7 @@ module.exports = async (req, res) => {
 
   const findUser = await user.findByPk(user_id);
   const findPelajaran = await pelajaran.findByPk(pelajaran_id);
-  const findNilai = await nilaiModel.findOne({
+  const findNilai = await nilai.findOne({
     where: { user_id, pelajaran_id },
   });
 
@@ -38,7 +38,7 @@ module.exports = async (req, res) => {
       message: "User atau Pelajaran Tidak Terdaftar",
     });
   }
-  const create = await nilaiModel.create({ user_id, pelajaran_id, nilai });
+  const create = await nilai.create({ user_id, pelajaran_id, value, nama });
   return res.status(201).json({
     status: "success",
     message: create,
