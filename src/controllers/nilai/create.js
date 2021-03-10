@@ -22,7 +22,7 @@ module.exports = async (req, res) => {
   const findUser = await user.findByPk(user_id);
   const findPelajaran = await pelajaran.findByPk(pelajaran_id);
   const findNilai = await nilai.findOne({
-    where: { user_id, pelajaran_id },
+    where: { user_id, pelajaran_id, nama },
   });
 
   if (findNilai) {
