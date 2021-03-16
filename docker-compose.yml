@@ -11,7 +11,7 @@ services:
     ports:
       - "${PORT}:${PORT}"
     networks:
-      - apt2
+      - app
 
   db:
     image: postgres:12.0-alpine
@@ -23,10 +23,10 @@ services:
     env_file:
       - ./.env
     networks:
-      - apt2
+      - app
 
 networks:
-  apt2:
+  app:
 
 volumes:
   database:
