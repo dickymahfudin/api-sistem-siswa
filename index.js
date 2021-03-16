@@ -17,13 +17,6 @@ app.use(cors());
 app.use(bodyParser.json({ limit: "100mb" }));
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/", (req, res) => {
-  return res.status(200).json({
-    status: "success",
-    data: [],
-  });
-});
-
 app.use("/api/user", userRouter);
 app.use("/api/absen", absenRouter);
 app.use("/api/pembayaran", middleware, pembayaranRouter);
