@@ -10,17 +10,5 @@ const dialect = DB_CONNECTION;
 module.exports = {
   development: { username, password, database, host, dialect },
   test: { username, password, database, host, dialect },
-  production: {
-    username,
-    password,
-    database,
-    host,
-    dialect,
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false,
-      },
-    },
-  },
+  production: { username, password, database, host, dialect },
 };
