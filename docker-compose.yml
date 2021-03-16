@@ -14,14 +14,19 @@ services:
       - app
 
   db:
-    image: postgres:12.0-alpine
+    image: mysql:8
     restart: always
     volumes:
-      - database:/var/lib/postgresql/data
+      - db-config:/etc/mysql
+      - db-data:/var/lib/mysql
     ports:
-      - "${DB_PORT_EXPOSE}:5432"
-    env_file:
-      - ./.env
+      - "${DB_PORT_EXPOSE}:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+
     networks:
       - app
 
@@ -29,5 +34,6 @@ networks:
   app:
 
 volumes:
-  database:
+  db-config:
+  db-data:
   node_modules:
