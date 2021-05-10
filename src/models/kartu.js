@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
   kartu.init(
     {
       uid: DataTypes.STRING,
+      status: DataTypes.BOOLEAN,
     },
     {
       sequelize,

@@ -1,11 +1,11 @@
 const { kartu } = require("../../models");
 
 module.exports = async (req, res) => {
-  const { uid } = req.query;
+  const { status } = req.body;
 
   const findKartu = await kartu.findByPk(1);
 
-  await findKartu.update({ uid });
+  await findKartu.update({ status });
 
   return res.status(200).json({
     status: "success",

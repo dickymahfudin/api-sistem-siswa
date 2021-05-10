@@ -15,14 +15,13 @@ module.exports = async (req, res) => {
     },
     where: { uid },
   });
-  console.log(findUser);
 
   if (!findUser) {
     const findKartu = await kartu.findByPk(1);
-    await findKartu.update({ uid });
+    await findKartu.update({ uid, status: false });
     return res.status(200).json({
       status: "success",
-      data: findKartu,
+      data: { message: "Kartu Berhasil DI Update" },
     });
   }
 

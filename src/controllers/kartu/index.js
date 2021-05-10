@@ -1,5 +1,5 @@
 const get = require("./get");
-const update = require("./updateViaGet");
+const update = require("./update");
 
 module.exports = {
   get,
