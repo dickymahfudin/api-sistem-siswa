@@ -41,11 +41,45 @@ module.exports = {
         type: Sequelize.DATE,
       },
     });
+
     await queryInterface.bulkInsert("users", [
       {
         nama: "Admin",
-        nis: 12,
-        password: "admin",
+        nis: 100,
+        password: "admin1234",
+        role: 1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        nama: "guru",
+        nis: 200,
+        password: "guru1234",
+        role: 2,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        nama: "siswa1",
+        nis: 1,
+        password: "siswa1234",
+        role: 3,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        nama: "siswa2",
+        nis: 2,
+        password: "siswa1234",
+        role: 3,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        nama: "siswa3",
+        nis: 3,
+        password: "siswa1234",
+        role: 3,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
