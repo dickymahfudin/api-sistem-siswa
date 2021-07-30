@@ -26,6 +26,5 @@ module.exports = {
         rejectUnauthorized: false,
       },
     },
-    timezone: TZ,
   },
 };
