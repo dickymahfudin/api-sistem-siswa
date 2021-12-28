@@ -18,7 +18,12 @@ module.exports = (sequelize, DataTypes) => {
     {
       user_id: DataTypes.INTEGER,
       absen1: DataTypes.BOOLEAN,
-      absen2: DataTypes.BOOLEAN,
+      bahasa_indonesia: DataTypes.BOOLEAN,
+      pkn: DataTypes.BOOLEAN,
+      bahasa_inggris: DataTypes.BOOLEAN,
+      matematika: DataTypes.BOOLEAN,
+      ipa: DataTypes.BOOLEAN,
+      ips: DataTypes.BOOLEAN,
     },
     {
       sequelize,

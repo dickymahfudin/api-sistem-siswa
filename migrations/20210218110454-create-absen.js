@@ -23,7 +23,32 @@ module.exports = {
         type: Sequelize.BOOLEAN,
         defaultValue: false,
       },
-      absen2: {
+      bahasa_indonesia: {
+        allowNull: false,
+        type: Sequelize.BOOLEAN,
+        defaultValue: false,
+      },
+      pkn: {
+        allowNull: false,
+        type: Sequelize.BOOLEAN,
+        defaultValue: false,
+      },
+      bahasa_inggris: {
+        allowNull: false,
+        type: Sequelize.BOOLEAN,
+        defaultValue: false,
+      },
+      matematika: {
+        allowNull: false,
+        type: Sequelize.BOOLEAN,
+        defaultValue: false,
+      },
+      ipa: {
+        allowNull: false,
+        type: Sequelize.BOOLEAN,
+        defaultValue: false,
+      },
+      ips: {
         allowNull: false,
         type: Sequelize.BOOLEAN,
         defaultValue: false,

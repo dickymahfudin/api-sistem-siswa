@@ -18,17 +18,32 @@ module.exports = async (req, res) => {
       const createdAbsen = await absen.create({ user_id, absen1: true });
       return res.status(201).json({
         status: "success",
-        data: { user_id: createdAbsen.user_id, absen1: createdAbsen.absen1 },
+        data: createdAbsen,
       });
     } else {
-      const updateAbsen = await temp.update({ user_id, absen2: true });
+      let updateAbsen;
+      console.log(temp);
+      if (!temp.bahasa_indonesia) {
+        updateAbsen = await temp.update({ user_id, bahasa_indonesia: true });
+      } else if (!temp.pkn) {
+        updateAbsen = await temp.update({ user_id, pkn: true });
+      } else if (!temp.bahasa_inggris) {
+        updateAbsen = await temp.update({ user_id, bahasa_inggris: true });
+      } else if (!temp.matematika) {
+        updateAbsen = await temp.update({ user_id, matematika: true });
+      } else if (!temp.ipa) {
+        updateAbsen = await temp.update({ user_id, ipa: true });
+      } else if (!temp.ips) {
+        updateAbsen = await temp.update({ user_id, ips: true });
+      } else {
+        return res.status(409).json({
+          status: "error",
+          message: "User Sudah Absen",
+        });
+      }
       return res.status(201).json({
         status: "success",
-        data: {
-          user_id: updateAbsen.user_id,
-          absen1: updateAbsen.absen1,
-          absen2: updateAbsen.absen2,
-        },
+        data: updateAbsen,
       });
     }
   };
@@ -59,7 +74,7 @@ module.exports = async (req, res) => {
         message: "User Belum Absen Sebelumnya",
       });
     } else {
-      if (findAbsen.absen2) {
+      if (findAbsen.bahasa_indonesia) {
         const compare = compareDay(findAbsen.createdAt);
         if (!compare) {
           return res.status(409).json({
