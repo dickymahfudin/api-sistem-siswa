@@ -74,7 +74,14 @@ module.exports = async (req, res) => {
         message: "User Belum Absen Sebelumnya",
       });
     } else {
-      if (findAbsen.bahasa_indonesia) {
+      if (
+        findAbsen.bahasa_indonesia &&
+        findAbsen.pkn &&
+        findAbsen.bahasa_inggris &&
+        findAbsen.matematika &&
+        findAbsen.ipa &&
+        findAbsen.ips
+      ) {
         const compare = compareDay(findAbsen.createdAt);
         if (!compare) {
           return res.status(409).json({
