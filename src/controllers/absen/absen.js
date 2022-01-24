@@ -1,5 +1,6 @@
 const { absen, user } = require("../../models");
 const { compareDay } = require("../../helpers/datetime");
+const moment = require("moment");
 
 module.exports = async (req, res) => {
   const paramAbsen = req.params.absen;
@@ -57,7 +58,7 @@ module.exports = async (req, res) => {
     if (!findAbsen) {
       return createAbsen();
     } else {
-      const compare = compareDay(findAbsen.createdAt);
+      const compare = moment().isSame(moment(findAbsen.createdAt), "d");
       if (compare) {
         return res.status(409).json({
           status: "error",
