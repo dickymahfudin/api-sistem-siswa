@@ -16,7 +16,7 @@ module.exports = async (req, res) => {
 
   const createAbsen = async (temp) => {
     if (!temp) {
-      const createdAbsen = await absen.create({ user_id, absen1: true });
+      const createdAbsen = await absen.create({ user_id, absen1: true, waktu_absen1: Date.now() });
       return res.status(201).json({
         status: "success",
         data: createdAbsen,
@@ -25,17 +25,19 @@ module.exports = async (req, res) => {
       let updateAbsen;
       console.log(temp);
       if (!temp.bahasa_indonesia) {
-        updateAbsen = await temp.update({ user_id, bahasa_indonesia: true });
+        updateAbsen = await temp.update({ user_id, bahasa_indonesia: true, waktu_b_indo: Date.now() });
       } else if (!temp.pkn) {
-        updateAbsen = await temp.update({ user_id, pkn: true });
+        updateAbsen = await temp.update({ user_id, pkn: true, waktu_pkn: Date.now() });
       } else if (!temp.bahasa_inggris) {
-        updateAbsen = await temp.update({ user_id, bahasa_inggris: true });
+        updateAbsen = await temp.update({ user_id, bahasa_inggris: true, waktu_b_inggris: Date.now() });
       } else if (!temp.matematika) {
-        updateAbsen = await temp.update({ user_id, matematika: true });
+        updateAbsen = await temp.update({ user_id, matematika: true, waktu_matematika: Date.now() });
       } else if (!temp.ipa) {
-        updateAbsen = await temp.update({ user_id, ipa: true });
+        updateAbsen = await temp.update({ user_id, ipa: true, waktu_ipa: Date.now() });
       } else if (!temp.ips) {
-        updateAbsen = await temp.update({ user_id, ips: true });
+        updateAbsen = await temp.update({ user_id, ips: true, waktu_ips: Date.now() });
+      } else if (!temp.absen2) {
+        updateAbsen = await temp.update({ user_id, absen2: true, waktu_absen2: Date.now() });
       } else {
         return res.status(409).json({
           status: "error",
