@@ -54,47 +54,38 @@ module.exports = {
     queryInterface.removeColumn(
       'users',
       'waktu_b_indo',
-       Sequelize.DATE
-     ),
+    ),
     queryInterface.removeColumn(
       'users',
       'waktu_b_inggris',
-       Sequelize.DATE
     ),
     queryInterface.removeColumn(
       'users',
       'waktu_pkn',
-       Sequelize.DATE
     ),
     queryInterface.removeColumn(
       'users',
       'waktu_ipa',
-       Sequelize.DATE
     ),
     queryInterface.removeColumn(
       'users',
       'waktu_ips',
-       Sequelize.DATE
     ),
     queryInterface.removeColumn(
       'users',
       'waktu_matematika',
-       Sequelize.DATE
     ),
     queryInterface.removeColumn(
       'users',
       'waktu_absen1',
-       Sequelize.DATE
     ),
     queryInterface.removeColumn(
       'users',
       'waktu_absen2',
-       Sequelize.DATE
     ),
     queryInterface.removeColumn(
       'users',
       'absen2',
-       Sequelize.BOOLEAN
     )
   }
 }
