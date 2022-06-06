@@ -3,47 +3,47 @@ module.exports = {
   up: function (queryInterface, Sequelize) {
     return Promise.all([
       queryInterface.addColumn(
-        'users',
+        'absen',
         'waktu_b_indo',
          Sequelize.DATE
        ),
       queryInterface.addColumn(
-        'users',
+        'absen',
         'waktu_b_inggris',
          Sequelize.DATE
       ),
       queryInterface.addColumn(
-        'users',
+        'absen',
         'waktu_pkn',
          Sequelize.DATE
       ),
       queryInterface.addColumn(
-        'users',
+        'absen',
         'waktu_ipa',
          Sequelize.DATE
       ),
       queryInterface.addColumn(
-        'users',
+        'absen',
         'waktu_ips',
          Sequelize.DATE
       ),
       queryInterface.addColumn(
-        'users',
+        'absen',
         'waktu_matematika',
          Sequelize.DATE
       ),
       queryInterface.addColumn(
-        'users',
+        'absen',
         'waktu_absen1',
          Sequelize.DATE
       ),
       queryInterface.addColumn(
-        'users',
+        'absen',
         'waktu_absen2',
          Sequelize.DATE
       ),
       queryInterface.addColumn(
-        'users',
+        'absen',
         'absen2',
          Sequelize.BOOLEAN
       )
@@ -52,39 +52,39 @@ module.exports = {
 
   down: function (queryInterface, Sequelize) {
     queryInterface.removeColumn(
-      'users',
+      'absen',
       'waktu_b_indo',
     ),
     queryInterface.removeColumn(
-      'users',
+      'absen',
       'waktu_b_inggris',
     ),
     queryInterface.removeColumn(
-      'users',
+      'absen',
       'waktu_pkn',
     ),
     queryInterface.removeColumn(
-      'users',
+      'absen',
       'waktu_ipa',
     ),
     queryInterface.removeColumn(
-      'users',
+      'absen',
       'waktu_ips',
     ),
     queryInterface.removeColumn(
-      'users',
+      'absen',
       'waktu_matematika',
     ),
     queryInterface.removeColumn(
-      'users',
+      'absen',
       'waktu_absen1',
     ),
     queryInterface.removeColumn(
-      'users',
+      'absen',
       'waktu_absen2',
     ),
     queryInterface.removeColumn(
-      'users',
+      'absen',
       'absen2',
     )
   }
