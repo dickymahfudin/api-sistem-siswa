@@ -6,6 +6,7 @@ const userRouter = require("./src/routes/user");
 const absenRouter = require("./src/routes/absen");
 const pembayaranRouter = require("./src/routes/pembayaran");
 const pelajaranRouter = require("./src/routes/pelajaran");
+const absenPelajaranRouter = require("./src/routes/absenPelajaran");
 const nilaiRouter = require("./src/routes/nilai");
 const kartuRouter = require("./src/routes/kartu");
 const middleware = require("./src/helpers/middlewareToken");
@@ -19,6 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/user", userRouter);
 app.use("/api/absen", absenRouter);
+app.use("/api/absen-pelajaran", absenPelajaranRouter);
 app.use("/api/pembayaran", middleware, pembayaranRouter);
 app.use("/api/pelajaran", middleware, pelajaranRouter);
 app.use("/api/nilai", middleware, nilaiRouter);
